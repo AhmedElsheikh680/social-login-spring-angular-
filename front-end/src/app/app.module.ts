@@ -21,6 +21,8 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider
 } from 'angularx-social-login';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import {
   imports: [
     RouterModule.forRoot(routes),
     SocialLoginModule,
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     {
@@ -49,7 +53,7 @@ import {
           },
           {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('925942674895534')
+            provider: new FacebookLoginProvider('512706446469534')
           }
         ]
       } as SocialAuthServiceConfig,

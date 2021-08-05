@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div *ngIf="isLogin" class="jumbotron">
   <img src="{{ socialUser.photoUrl }}"/>
   <h1 class="display-4">Hello, {{ socialUser.name}}!</h1>
   <p class="lead">{{ socialUser.email }}</p>

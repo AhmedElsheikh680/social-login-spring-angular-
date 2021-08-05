@@ -8,14 +8,6 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { SocialComponent } from './components/social/social.component';
 import {RouterModule, Routes} from '@angular/router';
 
-const routes: Routes = [
-  {path: 'login', component: SocialComponent},
-  { path: 'home', component: HomeComponent},
-  { path: 'profile', component: ProfileComponent},
-  { path: '**', redirectTo: '/login'},
-  { path: '', component: HomeComponent}
-];
-
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {
   GoogleLoginProvider,
@@ -23,6 +15,19 @@ import {
 } from 'angularx-social-login';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { StudentComponent } from './components/student/student.component';
+
+const routes: Routes = [
+  { path: 'students', component: StudentComponent},
+  {path: 'login', component: SocialComponent},
+  { path: 'home', component: HomeComponent},
+  { path: 'profile', component: ProfileComponent},
+  { path: '**', redirectTo: '/home'},
+  { path: '', component: HomeComponent},
+
+];
+
+
 
 @NgModule({
   declarations: [
@@ -30,7 +35,8 @@ import {HttpClientModule} from '@angular/common/http';
     HeaderComponent,
     HomeComponent,
     ProfileComponent,
-    SocialComponent
+    SocialComponent,
+    StudentComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
